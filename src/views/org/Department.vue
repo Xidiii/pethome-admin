@@ -273,8 +273,6 @@ v-for="变量名 in 数据源"  -- 遍历
               })
               this.loadList();
             },
-
-
             //批量删除
           delBatch(){
             this.$confirm('确定删除这些数据吗？', '请确认', {
