@@ -24,6 +24,13 @@ import axios from 'axios'
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
+// 在vue项目中引入百度地图插件, 在main.js里面写入下列内容
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+    ak: 'YOUR_BAIDU_MAP_KEY'
+    // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key
+})
 /**======================================================================================
  * 内容说明： 配置axios的全局基本路径全局属性配置
  * 注意如果你springboot后端端口不是8080，要改

@@ -3,6 +3,7 @@ import NotFound from './views/404.vue'
 import echarts from './views/charts/echarts.vue'
 import Home from "./views/Home";
 import Department from "./views/org/Department";
+import Shop from "./views/Shop";
 
 
 let routes = [
@@ -32,6 +33,16 @@ let routes = [
         component: Login,
         //模板展示的名字
         name: 'Login',
+        //hidden 隐藏
+        hidden: true
+    },
+    {
+        //前端访问路径
+        path: '/shop',
+        //对应的组件或者叫模板
+        component: Shop,
+        //模板展示的名字
+        name: 'shop',
         //hidden 隐藏
         hidden: true
     },

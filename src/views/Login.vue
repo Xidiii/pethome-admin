@@ -46,7 +46,7 @@
       },
       shopZhuce(){
         //跳转到指定的路由url地址
-        this.$router.push({ path: '/shopZhuCe' });
+        this.$router.push({ path: '/shop' });
       },
       handleSubmit2(ev) {
         //跳转页面
