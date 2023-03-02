@@ -182,8 +182,11 @@ export default {
     },
     //文件删除
     handleRemove(file, fileList) {
-      var filePath = file.response.resultObj;
-      this.$http.delete("/common/fastDfs/?path=" + filePath)
+      console.log(file)
+      var filePath = file.response.object;
+      var f = filePath.lastIndexOf("/");
+      var name =  filePath.substring(f+1);
+      this.$http.get("/file/fastDfs/"+name)
           .then(res => {
             if (res.data.success) {
               this.$message({
