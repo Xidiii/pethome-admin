@@ -213,6 +213,7 @@ v-for="变量名 in 数据源"  -- 遍历
                   this.sels.push(val[i].id);
                 }
               }
+              console.log(this.sels);
             },
             // 修改按钮事件
             handleEdit(index,row){
@@ -275,6 +276,7 @@ v-for="变量名 in 数据源"  -- 遍历
             },
             //批量删除
           delBatch(){
+            console.log(this.sels)
             this.$confirm('确定删除这些数据吗？', '请确认', {
               confirmButtonText: '确定',
               cancelButtonText: '取消',
@@ -303,7 +305,6 @@ v-for="变量名 in 数据源"  -- 遍历
                 message: '已取消操作'
               });
             });
-            this.loadList();
           },
             // 获取后端部门数据
             loadList(){

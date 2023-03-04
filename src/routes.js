@@ -4,6 +4,7 @@ import echarts from './views/charts/echarts.vue'
 import Home from "./views/Home";
 import Department from "./views/org/Department";
 import Shop from "./views/Shop";
+import Shopfind from "./views/org/Shopfind";
 
 
 let routes = [
@@ -23,7 +24,8 @@ let routes = [
         name: '组织机构',
         iconCls: 'el-icon-s-grid',//图标样式class
         children: [
-            { path: '/department', component: Department, name: '部门管理' }
+            { path: '/department', component: Department, name: '部门管理' },
+            { path: '/shopfind', component: Shopfind, name: '店铺管理' }
         ]
     },
     {
@@ -43,6 +45,16 @@ let routes = [
         component: Shop,
         //模板展示的名字
         name: 'shop',
+        //hidden 隐藏
+        hidden: true
+    },
+    {
+        //前端访问路径
+        path: '/shopfind',
+        //对应的组件或者叫模板
+        component: Shopfind,
+        //模板展示的名字
+        name: 'shopfind',
         //hidden 隐藏
         hidden: true
     },
