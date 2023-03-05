@@ -50,10 +50,10 @@
       </el-table-column>
       <el-table-column prop="state" label="状态" width="80" sortable>
         <template slot-scope="scope">
-          <span style="color: gold" v-if="scope.row.state==1">待审核</span>
-          <span style="color: darkorchid" v-else-if="scope.row.state==2">待激活</span>
-          <span style="color: green" v-else-if="scope.row.state==3">审核通过</span>
-          <span style="color: red" v-else-if="scope.row.state==4">驳回</span>
+          <span style="color: gold" v-if="scope.row.state==0">待审核</span>
+          <span style="color: darkorchid" v-else-if="scope.row.state==1">待激活</span>
+          <span style="color: green" v-else-if="scope.row.state==2">审核通过</span>
+          <span style="color: red" v-else-if="scope.row.state==3">驳回</span>
         </template>
       </el-table-column>
       <el-table-column prop="logo" label="图标" width="80" >
@@ -67,7 +67,7 @@
         <template scope="scope">
           <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
           <el-button type="danger" size="small" @click="handleDel(scope.$index, scope.row)">删除</el-button>
-          <el-button type="warning" :disabled="scope.row.state!==1" size="small" @click="handleAudit(scope.$index, scope.row)">审核</el-button>
+          <el-button type="warning" :disabled="scope.row.state!==0" size="small" @click="handleAudit(scope.$index, scope.row)">审核</el-button>
         </template>
       </el-table-column>
     </el-table>
