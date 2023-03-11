@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import Department from "./views/org/Department";
 import Shop from "./views/Shop";
 import Shopfind from "./views/org/Shopfind";
+import PetShengHe from "./views/org/PetShengHe";
 
 
 let routes = [
@@ -25,7 +26,8 @@ let routes = [
         iconCls: 'el-icon-s-grid',//图标样式class
         children: [
             { path: '/department', component: Department, name: '部门管理' },
-            { path: '/shopfind', component: Shopfind, name: '店铺管理' }
+            { path: '/shopfind', component: Shopfind, name: '店铺管理' },
+            { path: '/petshenghe', component: PetShengHe, name: '寻主审核' },
         ]
     },
     {
