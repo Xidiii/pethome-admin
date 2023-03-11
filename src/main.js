@@ -35,7 +35,7 @@ Vue.use(BaiduMap, {
  * 内容说明： 配置axios的全局基本路径全局属性配置
  * 注意如果你springboot后端端口不是8080，要改
  ======================================================================================*/
-axios.defaults.baseURL = 'http://localhost:8080/'
+axios.defaults.baseURL = 'http://localhost:80/'
 Vue.prototype.$http = axios
 /**======================================================================================
  * 内容说明： 路由配置
@@ -47,7 +47,7 @@ const router = new VueRouter({
 //拦截器配置
 //1-请求拦截器配置
 //在你每次发请求之前帮你做的事情 ，请求头中携带token
-/*
+
 axios.interceptors.request.use(config => {
     // 设置请求头
     config.headers['token'] = sessionStorage.getItem("token");
@@ -55,9 +55,9 @@ axios.interceptors.request.use(config => {
 }, error => {
     return Promise.reject(error)
 });
-*/
+
 // 响应拦截器
-/*
+
 axios.interceptors.response.use(res => {
     // 请求成功对响应数据做处理
     console.log(location.href)
@@ -82,12 +82,12 @@ axios.interceptors.response.use(res => {
     // 该返回的数据则是axios.catch(err)中接收的数据
     return Promise.reject(err)
 })
-*/
+
 
 /**======================================================================================
  * 内容说明： 路由前置拦截器，用作登录检查
  ======================================================================================*/
-/*
+
 router.beforeEach((to, from, next) => {
     //NProgress.start();
     if (to.path === '/login') {
@@ -97,7 +97,7 @@ router.beforeEach((to, from, next) => {
     //从会话缓存中拿到token  //shopZhuCe
     let token = sessionStorage.getItem('token');
     //true     true
-    if (!token && to.path !== '/login' && to.path !== '/shopZhuCe') {
+    if (!token && to.path !== '/login' && to.path !== '/shop') {
         //跳转到登录页面
         next({path: '/login'})
     } else {
@@ -105,7 +105,7 @@ router.beforeEach((to, from, next) => {
         next()
     }
 })
-*/
+
 /**======================================================================================
  * 内容说明： 创建Vue对象，挂载 #app元素 ， 见Vue.app
  ======================================================================================*/

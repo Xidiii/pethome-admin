@@ -36,8 +36,9 @@
         methods: {
             drawColumnChart() {
                 this.$http.get("/shop/echarts").then(res => {
+                  console.log(res)
                     /*使用map函数将count值筛选出来*/
-                    let arr = res.data.data.map(obj => {
+                    let arr = res.data.object.map(obj => {
                         return obj.count;
                     })
                     // 初始化Echarts
@@ -151,6 +152,11 @@
                 });
             },
             drawPieChart() {
+              this.$http.get("/shop/echarts").then(res => {
+                console.log(res)
+                let arr = res.data.object.map(obj => {
+                  return obj.count;
+                })
                 this.chartPie = echarts.init(document.getElementById('chartPie'));
                 this.chartPie.setOption({
                     title: {
@@ -165,7 +171,7 @@
                     legend: {
                         orient: 'vertical',
                         left: 'left',
-                        data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                        data: ['待审核', '待激活', '激活成功', '拒绝']
                     },
                     series: [
                         {
@@ -174,11 +180,10 @@
                             radius: '55%',
                             center: ['50%', '60%'],
                             data: [
-                                { value: 335, name: '直接访问' },
-                                { value: 310, name: '邮件营销' },
-                                { value: 234, name: '联盟广告' },
-                                { value: 135, name: '视频广告' },
-                                { value: 1548, name: '搜索引擎' }
+                                { value: arr[0], name: '待审核' },
+                                { value: arr[1], name: '待激活' },
+                                { value: arr[2], name: '激活成功' },
+                                { value: arr[3], name: '拒绝' },
                             ],
                             itemStyle: {
                                 emphasis: {
@@ -190,6 +195,7 @@
                         }
                     ]
                 });
+              })
             },
             drawCharts() {
                 this.drawColumnChart()

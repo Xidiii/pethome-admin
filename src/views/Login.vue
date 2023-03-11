@@ -70,7 +70,7 @@
               let { message, code, success } = res.data;
               if (success) {
                 //拿到对象
-                let userInfo = res.data.data;
+                let userInfo = res.data.object;
                 sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
                 sessionStorage.setItem('token', userInfo.token);
                 //跳转到首页面
